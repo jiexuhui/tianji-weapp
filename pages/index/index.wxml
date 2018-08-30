@@ -1,0 +1,111 @@
+<!--index.wxml-->
+<!--1px = 750/320 = 2.34rpx;-->
+<view class="container">
+  <view class='function'>
+    <view id="1" class="tab type-navbar-item {{activeCategoryId == 1 ? 'type-item-on' : ''}}" bindtap="tabClick">DOTA2</view>
+    <view id="2" class="tab type-navbar-item {{activeCategoryId == 2 ? 'type-item-on' : ''}}" bindtap="tabClick">英雄联盟</view>
+    <view id="3" class="tab type-navbar-item {{activeCategoryId == 3 ? 'type-item-on' : ''}}" bindtap="tabClick">CS:GO</view>
+    <view id="4" class="tab type-navbar-item {{activeCategoryId == 4 ? 'type-item-on' : ''}}" bindtap="tabClick">王者荣耀</view>
+  </view>
+  <!--今日联动+第一板块  -->
+  <view class="date">
+    <view class='title' ><text space="emsp">2018年8月30日 今天</text></view>
+    <view class='viewall'>
+      <navigator url="/pages/user/user" >全部赛事
+        <image class="righticon" src='../../images/right.png'></image>
+      </navigator>
+    </view>
+  </view>
+
+  <view class="matchbody">
+    <view class='bodytext'>
+      <view class='title2'>
+        <image style='width:40rpx;height:40rpx' mode="scaleToFill" class="minilogo" src='../../images/lpl.png'></image>
+        <text class='matchtitle'> 2018英雄联盟LPL夏季赛/17:00 7月31日第一场</text>
+      </view>
+      <view class='desc'>
+        <view class="leftteamlogo">
+          <image class="leftteamlogo" mode="aspectFit" src='../../images/we.png'></image>
+        </view>
+        <view class='vs'>
+          <text class='title0'>0 : 0</text>
+          <view id="4" class="statustab">已结束</view>
+        </view>
+        <view class="leftteamlogo">
+          <image class="leftteamlogo" mode="aspectFit" src='../../images/blg.png'></image>
+        </view>
+        <!-- <text class='touxiangneirong'>参与即可赠送小编一个兰博鸡尼大卡车，我么你的撒谎的不是。</text> -->
+      </view>
+      <text class='fengexian'></text>
+    </view>
+    <view class='bodytext'>
+      <view class='title2'>
+        <image style='width:40rpx;height:40rpx' mode="scaleToFill" class="minilogo" src='../../images/lpl.png'></image>
+        <text class='matchtitle'> 2018英雄联盟LPL夏季赛/17:00 7月31日第一场</text>
+      </view>
+      <view class='desc'>
+        <view class="leftteamlogo">
+          <image class="leftteamlogo" mode="aspectFit" src='../../images/we.png'></image>
+        </view>
+        <view class='vs'>
+          <text class='title0'>0 : 0</text>
+          <view id="4" class="statustab">已结束</view>
+        </view>
+        <view class="leftteamlogo">
+          <image class="leftteamlogo" mode="aspectFit" src='../../images/blg.png'></image>
+        </view>
+        <!-- <text class='touxiangneirong'>参与即可赠送小编一个兰博鸡尼大卡车，我么你的撒谎的不是。</text> -->
+      </view>
+      <text class='fengexian'></text>
+    </view>
+  </view>
+
+  <!--明日赛事联动+第二板块  -->
+  <view class="date">
+    <view class='title' ><text space="emsp">2018年8月31日 明天</text></view>
+    <view class='viewall'><navigator url="/pages/user/user" >全部赛事></navigator></view>
+  </view>
+  
+  <view class="matchbody">
+    <view class='bodytext'>
+      <view class='title2'>
+        <image style='width:40rpx;height:40rpx' mode="scaleToFill" class="minilogo" src='../../images/lpl.png'></image>
+        <text class='matchtitle'> 2018英雄联盟LPL夏季赛/17:00 7月31日第一场</text>
+      </view>
+      <view class='desc'>
+        <view class="leftteamlogo">
+          <image class="leftteamlogo" mode="aspectFit" src='../../images/we.png'></image>
+        </view>
+        <view class='vs'>
+          <text class='title0'>0 : 0</text>
+          <view id="4" class="statustab">已结束</view>
+        </view>
+        <view class="leftteamlogo">
+          <image class="leftteamlogo" mode="aspectFit" src='../../images/blg.png'></image>
+        </view>
+        <!-- <text class='touxiangneirong'>参与即可赠送小编一个兰博鸡尼大卡车，我么你的撒谎的不是。</text> -->
+      </view>
+      <text class='fengexian'></text>
+    </view>
+    <view class='bodytext'>
+      <view class='title2'>
+        <image style='width:40rpx;height:40rpx' mode="scaleToFill" class="minilogo" src='../../images/lpl.png'></image>
+        <text class='matchtitle'> 2018英雄联盟LPL夏季赛/17:00 7月31日第一场</text>
+      </view>
+      <view class='desc'>
+        <view class="leftteamlogo">
+          <image class="leftteamlogo" mode="aspectFit" src='../../images/we.png'></image>
+        </view>
+        <view class='vs'>
+          <text class='title0'>0 : 0</text>
+          <view id="4" class="statustab">已结束</view>
+        </view>
+        <view class="leftteamlogo">
+          <image class="leftteamlogo" mode="aspectFit" src='../../images/blg.png'></image>
+        </view>
+        <!-- <text class='touxiangneirong'>参与即可赠送小编一个兰博鸡尼大卡车，我么你的撒谎的不是。</text> -->
+      </view>
+      <text class='fengexian'></text>
+    </view>
+  </view>
+</view>

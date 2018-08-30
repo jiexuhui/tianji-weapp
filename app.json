@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/match/match",
+    "pages/auth/auth",
+    "pages/index/index",
+    "pages/user/user"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "天机电竞",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "selectedColor": "#b97612",
+    "color": "#666",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon首页暗@2x.png",
+        "selectedIconPath": "images/icon首页亮@2x.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/match/match",
+        "iconPath": "images/icon赛事暗@2x.png",
+        "selectedIconPath": "images/icon赛事亮@2x.png",
+        "text": "赛事"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/icon我的暗@2x.png",
+        "selectedIconPath": "images/icon我的亮@2x.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": false
+}
