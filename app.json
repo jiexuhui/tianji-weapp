@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/activity/activity",
     "pages/match/match",
     "pages/auth/auth",
     "pages/index/index",
@@ -18,16 +19,16 @@
     "color": "#666",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "iconPath": "images/icon首页暗@2x.png",
-        "selectedIconPath": "images/icon首页亮@2x.png",
+        "pagePath": "pages/activity/activity",
+        "iconPath": "images/icon我的暗@2x.png",
+        "selectedIconPath": "images/icon我的亮@2x.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/match/match",
+        "pagePath": "pages/index/index",
         "iconPath": "images/icon赛事暗@2x.png",
         "selectedIconPath": "images/icon赛事亮@2x.png",
-        "text": "赛事"
+        "text": "比赛"
       },
       {
         "pagePath": "pages/user/user",

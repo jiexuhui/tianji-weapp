@@ -29,7 +29,7 @@ let app = {
         });
       } else {
         wx.reLaunch({
-          url: '/pages/index/index'
+          url: '/pages/activity/activity'
         });
       }
     }).catch(() => {
@@ -45,7 +45,7 @@ let app = {
       });
     }else {
       wx.reLaunch({
-        url: '/pages/index/index'
+        url: '/pages/activity/activity'
       });
     }
   },
@@ -62,15 +62,9 @@ let app = {
         app.globalData.userInfo = res.data.userinfo;
         app.globalData.token = res.data.token;
         console.log("userinfo:", res.data.userinfo);
-        if (res.data.userinfo){
-          wx.reLaunch({
-            url: '/pages/welcome/welcome'
-          })
-        }else {
-          wx.reLaunch({
-            url: '/pages/index/index'
-          });
-        }
+        wx.reLaunch({
+          url: '/pages/activity/activity'
+        });
       }).catch((err) => {
         console.log(err)
       });

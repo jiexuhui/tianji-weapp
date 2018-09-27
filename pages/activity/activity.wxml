@@ -1,0 +1,58 @@
+<view class='header'>
+  <text class='title'>猜冠军，得大奖！</text>
+  <image src="{{userInfo.avatarUrl}}"></image>
+</view>
+<!--今日联动+第一板块  -->
+<view class='bodytext'>
+  <text class='title0'>规则说明</text>
+
+  <view class='desc'>
+    <text class='touxiangbiaoti'>关于小人物的一切</text>
+    <text class='touxiangneirong'>参与即可赠送小编一个兰博鸡尼大卡车，我么你的撒谎的不是。</text>
+  </view>
+
+</view>
+
+
+<!--第三板块分割线  -->
+<text class='fengexian3'></text>
+
+
+<view class='projectbox'>
+  <text class='headingtext'>Today</text>
+  <!--第一部分  -->
+  <view class='project'>
+    <image class='headimage' src='http://img.zcool.cn/community/01ca005b02587ba801218cf4fe698a.gif'></image>
+    <view class='projecttext'>
+      <text class='biaoti'>RNG</text>
+    </view>
+    <navigator url='/pages/pageopen/pageopen'>
+      <view class='openpush'></view>
+    </navigator>
+  </view>
+
+  <!--第二部分  -->
+
+  <view class='project'>
+    
+    <image class='headimage' src='http://img.zcool.cn/community/0130175b0259daa801209a85281b8a.gif'></image>
+    <view class='projecttext'>
+      <text class='biaoti'>EDG</text>
+    </view>
+    <navigator url='/pages/pageopen/pageopen'>
+      <view class='openpush'></view>
+    </navigator>
+  </view>
+
+  <!--第三部分  -->
+  <view class='project'>
+    <image class='headimage' src='http://img.zcool.cn/community/0110005b025a18a801218cf420ede5.gif'></image>
+    <view class='projecttext'>
+      <text class='biaoti'>IG</text>
+    </view>
+    <navigator url='/pages/pageopen/pageopen'>
+      <view class='openpush'></view>
+    </navigator>
+  </view>
+
+</view>
