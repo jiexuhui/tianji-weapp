@@ -4,7 +4,8 @@
     "pages/match/match",
     "pages/auth/auth",
     "pages/index/index",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/matchdetail/matchdetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

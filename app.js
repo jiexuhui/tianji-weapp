@@ -28,9 +28,9 @@ let app = {
           url: '/pages/auth/auth'
         });
       } else {
-        wx.reLaunch({
-          url: '/pages/activity/activity'
-        });
+        // wx.reLaunch({
+        //   url: '/pages/activity/activity'
+        // });
       }
     }).catch(() => {
 
@@ -44,9 +44,9 @@ let app = {
         url: '/pages/auth/auth'
       });
     }else {
-      wx.reLaunch({
-        url: '/pages/activity/activity'
-      });
+      // wx.reLaunch({
+      //   url: '/pages/activity/activity'
+      // });
     }
   },
   //获取用户信息

@@ -9,48 +9,65 @@ Page({
   data: {
     userInfo: wx.getStorageSync(app.globalData.userInfoKey),
     hasUserInfo: app.globalData.hasUserInfo,
-    imgUrls: [],
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
     duration: 800,
-    isShowUserPannel:false, //是否显示个人中心面板
-    goodslist:[],
-    addgoods:[],
-    classify:[],
-    activeCategoryId: 1,
-    goodsCount:0
+    matchlist:[],
+    gametypes:[],
+    activeCategoryId: 1
   },
   onLoad: function () {
     this.setData({
       userInfo: app.getUserinfo()
     });
-    this.goodsList();
+    this.matchList();
   },
 
   tabClick: function (e) {
     this.setData({
       activeCategoryId: e.currentTarget.id
     });
-    this.goodsList();
+    this.matchList();
   },
 
-  goodsList: function () {
+  matchList: function () {
     let that = this;
-    server.goodsList({ openid: that.data.userInfo.openid, classify: this.data.activeCategoryId}).then(res => {
+    server.matchList({ gametype: this.data.activeCategoryId}).then(res => {
       console.log("res:", res);
       console.log("data0:", res.data);
       if (res.code === 200) {
+        for (let i = 0; i < res.data[0].length; i++) {
+          res.data[0][i].tname = res.data[0][i].tname.split(',');
+          res.data[0][i].tlogo = res.data[0][i].tlogo.split(',');
+          res.data[0][i].tid = res.data[0][i].tid.split(',');
+        }
+        
         that.setData({
-          goodslist: res.data[0],
-          imgUrls: res.data[1],
-          classify: res.data[2],
-          goodsCount: res.data[3][0].count,
+          matchlist: res.data[0],
+          gametypes: res.data[1]
         });
       } else {
         util.showErrorToast(res.data.msg);
       }
     });
+  },
+  //跳转详情页
+  jumptodetail: function (e) {
+    console.log(e);
+    let that = this;
+    var index = e.currentTarget.dataset.index;
+    console.log("that.data.matchlist[index]",that.data.matchlist[index])
+    var matchid = that.data.matchlist[index].id;
+    var model = JSON.stringify(that.data.matchlist[index]);
+    var matchdetailStore = wx.getStorageSync("matchdetail");
+    if (matchdetailStore) {
+      wx.removeStorageSync("matchdetail");
+    }
+    wx.setStorageSync("matchdetail", (that.data.matchlist[index]))
+    wx.navigateTo({
+      url: '/pages/matchdetail/matchdetail?model=' + model,
+    })
   },
 
   showUserPannel: function(){
@@ -75,22 +92,6 @@ Page({
     })
   },
 
-  //跳转详情页
-  jumptodetail: function (e) {
-    console.log(e);
-    let that = this;
-    var index = e.currentTarget.dataset.index;
-    var goodsid = that.data.goodslist[index].goodsid;
-    var model = JSON.stringify(that.data.goodslist[index]);
-    var goodsdetailStore = wx.getStorageSync("goodsdetail");
-    if (goodsdetailStore) {
-      wx.removeStorageSync("goodsdetail");
-    }
-    wx.setStorageSync("goodsdetail", (that.data.goodslist[index]))
-    wx.navigateTo({
-      url: '/pages/goods/goods?model=' + model,
-    })
-  },
 
   //跳转到申请页
   jumplist: function (e) {
@@ -136,15 +137,15 @@ Page({
   },
   onShow: function () {
     // 页面显示
-    this.goodsList();
+    // this.goodsList();
   },
   /**
    * 用户点击右上角分享
    */
    onShareAppMessage: function () {
     return {
-      title: '博弈选款助手',
-      desc: '博弈选款助手',
+      title: '天机电竞',
+      desc: '赛事',
       path: '/pages/index/index'
     }
   }

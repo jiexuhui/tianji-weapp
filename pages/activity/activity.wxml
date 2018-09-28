@@ -7,8 +7,8 @@
   <text class='title0'>规则说明</text>
 
   <view class='desc'>
-    <text class='touxiangbiaoti'>关于小人物的一切</text>
-    <text class='touxiangneirong'>参与即可赠送小编一个兰博鸡尼大卡车，我么你的撒谎的不是。</text>
+    <text class='touxiangbiaoti'>{{activityInfo.name}}</text>
+    <text class='touxiangneirong'>{{activityInfo.desc}}</text>
   </view>
 
 </view>
@@ -19,40 +19,28 @@
 
 
 <view class='projectbox'>
-  <text class='headingtext'>Today</text>
-  <!--第一部分  -->
-  <view class='project'>
-    <image class='headimage' src='http://img.zcool.cn/community/01ca005b02587ba801218cf4fe698a.gif'></image>
-    <view class='projecttext'>
-      <text class='biaoti'>RNG</text>
-    </view>
-    <navigator url='/pages/pageopen/pageopen'>
-      <view class='openpush'></view>
-    </navigator>
-  </view>
+  <text class='headingtext'>选择队伍</text>
 
   <!--第二部分  -->
-
-  <view class='project'>
-    
-    <image class='headimage' src='http://img.zcool.cn/community/0130175b0259daa801209a85281b8a.gif'></image>
-    <view class='projecttext'>
-      <text class='biaoti'>EDG</text>
+  <block wx:for="{{activityInfo.tname}}" wx:key="{{index}}">
+    <view class='project' >
+      
+      <image class='headimage' mode='aspectFill' src='{{activityInfo.tlogo[index]}}'></image>
+      <view class='projecttext'>
+        <text class='biaoti'>{{activityInfo.tname[index]}}</text>
+      </view>
+      
+      <view class='openpush' bindtap="{{selectteam == 0?'selectTeam':''}}" data-index='{{activityInfo.tid[index]}}' data-name='{{activityInfo.tname[index]}}'
+        >
+        <image class='selectimg' mode='aspectFill' src='/images/选择.png'></image>
+      </view>
+      <view class='sopenpush' wx:if="{{selectteam == activityInfo.tid[index]}}">
+        <image class='selectimg' mode='aspectFill' src='/images/选择2.png'></image>
+      </view>
     </view>
-    <navigator url='/pages/pageopen/pageopen'>
-      <view class='openpush'></view>
-    </navigator>
-  </view>
-
-  <!--第三部分  -->
-  <view class='project'>
-    <image class='headimage' src='http://img.zcool.cn/community/0110005b025a18a801218cf420ede5.gif'></image>
-    <view class='projecttext'>
-      <text class='biaoti'>IG</text>
-    </view>
-    <navigator url='/pages/pageopen/pageopen'>
-      <view class='openpush'></view>
-    </navigator>
-  </view>
-
+  </block>
 </view>
+
+ <view  class='userinfo_auth'>
+    <button type='primary' open-type="share" hover-class='none'>分享</button>
+  </view>

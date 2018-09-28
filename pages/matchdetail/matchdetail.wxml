@@ -1,0 +1,51 @@
+<view class='header'>
+  <text class='title'>天机电竞</text>
+  <image src="{{userInfo.avatarUrl}}"></image>
+</view>
+
+
+
+<!--第三板块  -->
+ <view class='bodytext'>
+  <view class='title2'>
+    <!-- <image style='width:40rpx;height:40rpx' mode="scaleToFill" class="minilogo" src='../../images/lpl.png'></image> -->
+    <text class='matchtitle'> {{matchdetail.name}}</text>
+  </view>
+  <view class='desc'>
+    <view class="leftteamlogo">
+      <image class="leftteamlogo" mode="aspectFit" src='{{matchdetail.leftlogo}}'></image>
+    </view>
+    <view class='vs'>
+      <text class='title0'>{{matchdetail.leftscore}}:{{matchdetail.rightscore}}</text>
+      <view id="4" class="statustab">{{matchdetail.statuslabel}}</view>
+    </view>
+    <view class="leftteamlogo">
+      <image class="leftteamlogo" mode="aspectFit" src='{{matchdetail.rightlogo}}'></image>
+    </view>
+  </view>
+</view>
+
+
+<!--第三板块分割线  -->
+<text class='fengexian3'></text>
+
+<import src="/pages/template/indexPopup.wxml" />
+<template is="userPannel" data="{{isShowUserPannel}}" />
+<view class='add_symbol' bindtap='showUserPannel'></view>
+
+<view class='projectbox'>
+  <text class='headingtext'>实时文章</text>
+  <!--第一部分  -->
+  <view class='project' wx:for="{{articles}}" wx:key="{{index}}">
+    <image class='headimage' src='http://img.zcool.cn/community/0110005b025a18a801218cf420ede5.gif'></image>
+    <view class='projecttext'>
+      <text class='biaoti'>{{item.title}}</text>
+      <text class='jianjie'>作者: {{item.author}}</text>
+      <text class='field'>{{item.time}}</text>
+    </view>
+    <navigator url='/pages/pageopen/pageopen'>
+      <view class='openpush'></view>
+    </navigator>
+  </view>
+
+</view>
